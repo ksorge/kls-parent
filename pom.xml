@@ -1,18 +1,20 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.klsorge.common</groupId>
   <artifactId>kls-parent</artifactId>
-  <version>3-SNAPSHOT</version>
+  <version>1-SNAPSHOT</version>
   <packaging>pom</packaging>
+
   <name>KLSorge Parent POM</name>
   <description>The parent pom for klsorge.com</description>
   <organization>
     <name>KLSorge Consulting</name>
     <url>http://www.klsorge.com/</url>
   </organization>
-  <inceptionYear>2013</inceptionYear>
+  <inceptionYear>2014</inceptionYear>
   <prerequisites>
-    <maven>3.0.5</maven>
+    <maven>3.0.4</maven>
   </prerequisites>
   <url>${home.url}</url>
   <developers>
@@ -23,22 +25,19 @@
     </developer>
   </developers>
   <properties>
-    <ciManagement.url>http://ci.klsorge.com/jenkins/view/${group}/job/${project.artifactId}</ciManagement.url>
-    <distributionManagement.url>dav:http://repo.klsorge.com</distributionManagement.url>
+    <ciManagement.url>http://dev.klsorge.com/jenkins/job/${project.artifactId}</ciManagement.url>
+    <distributionManagement.url>dav:http://dev.klsorge.com</distributionManagement.url>
     <distributionManagement.site.id>site</distributionManagement.site.id>
     <distributionManagement.site.name>Site Repository</distributionManagement.site.name>
-    <distributionManagement.site.url>${distributionManagement.url}/site/${group}/${project.artifactId}/${project.version}</distributionManagement.site.url>
-    <group>common</group>
-    <home.url>http://repo.klsorge.com/site/${group}/${project.artifactId}</home.url>
-    <issueManagement.url>http://issues.klsorge.com/trac</issueManagement.url>
+    <distributionManagement.site.url>${distributionManagement.url}/site/${project.artifactId}/${project.version}</distributionManagement.site.url>
+    <home.url>http://dev.klsorge.com/site/${project.artifactId}/${project.version}</home.url>
+    <issueManagement.url>http://dev.klsorge.com/trac</issueManagement.url>
     <java.version>1.7</java.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <repository.url>http://repo.klsorge.com/proxy/</repository.url>
-    <release.tag>http://scm.klsorge.com/svn/${group}/tags</release.tag>
-    <release.format>${project.artifactId}-${project.version}</release.format>
-    <scm.url>http://scm.klsorge.com/svn/${group}/trunk/${project.artifactId}</scm.url>
-    <scm.connection>scm:svn:${scm.url}</scm.connection>
-    <scm.developerConnection>scm:svn:${scm.url}</scm.developerConnection>
+    <repository.url>http://dev.klsorge.com/proxy/</repository.url>
+    <scm.url>https://github.com/ksorge/${project.artifactId}</scm.url>
+    <scm.connection>scm:git:git@github.com:ksorge/${project.artifactId}.git</scm.connection>
+    <scm.developerConnection>${scm.connection}</scm.developerConnection>
     <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
 
     <!-- Plugin versions -->
@@ -100,7 +99,7 @@
     <logback.version>1.0.11</logback.version>
     <mockito.version>1.9.5</mockito.version>
     <openid4java.version>0.9.7</openid4java.version>
-    <plugin.config.version>1</plugin.config.version>
+    <plugin.config.version>7</plugin.config.version>
     <poi.version>3.9</poi.version>
     <powermock.version>1.5</powermock.version>
     <slf4j.version>1.7.5</slf4j.version>
